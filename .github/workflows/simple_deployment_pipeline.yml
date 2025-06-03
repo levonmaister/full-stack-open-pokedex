@@ -1,15 +1,11 @@
 name: Deployment pipeline
 
 
-if: ${{ github.event_name == 'push' }}
-  on:
-    push:
-      branches:
-        - main
-      pull_request:
-      branches: [main]
-      types: [opened, synchronize]
-  jobs:
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
     simple_deployment_pipeline:
       runs-on: ubuntu-20.04
       steps:
