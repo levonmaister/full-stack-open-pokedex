@@ -37,7 +37,10 @@ jobs:
       needs: [simple_deployment_pipeline]
       runs-on: ubuntu-latest
       steps:
-        - name: Bump version and push  tag 2
+        - name: Checkout code
+          uses: actions/checkout@v4          
+        - name: Bump version and push tag
           uses: anothrNick/github-tag-action@1
           env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
