@@ -23,4 +23,5 @@ jobs:
         - name: test
           run: npm run test
         - name: e2e-tests
-          run: npm run test:e2e
+          run: npx install playwright && /
+               npm run test:e2e
